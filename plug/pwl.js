@@ -59,7 +59,7 @@ pwl.init = function(fullAuto) {
 }
 pwl.stop = function(stealth) {
   if(!stealth) {
-    API.sendChat(':sunny: gPWL: Disengaged.');
+    API.sendChat(':sunny: PWL: Disengaged.');
   }
   API.off(API.USER_JOIN, pwl.userJoinCallback);
   API.off(API.USER_LEAVE, pwl.userLeaveCallback);
