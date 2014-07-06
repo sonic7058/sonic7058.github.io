@@ -25,9 +25,9 @@ pwl.userJoinCallback = function(user) {
         };
         API.on(API.WAIT_LIST_UPDATE, moveDJ);
         API.moderateAddDJ(user.id);
-        API.sendChat(':us: PWL: ' + user.username + ' rejoined within 1 hour of leaving and has been restored to position ' + restoreToPosition + ' in the wait list.');
+        API.sendChat(':sunny: PWL: ' + user.username + ' rejoined within 1 hour of leaving and has been restored to position ' + restoreToPosition + ' in the wait list.');
       } else {
-        API.sendChat(':us: PWL: ' + user.username + ' rejoined within 1 hour of leaving and should be restored to position ' + restoreToPosition + ' in the wait list.');
+        API.sendChat(':sunny: PWL: ' + user.username + ' rejoined within 1 hour of leaving and should be restored to position ' + restoreToPosition + ' in the wait list.');
       }
     }
   }
@@ -40,7 +40,7 @@ pwl.chatCallback = function(chatData) {
   if(chatData.message[0] !== ';' && chatData.message[0] !== '!') return;
   if(chatData.message.toLowerCase().substring(1) === 'pwlrunning') {
     if(pwl.engaged) {
-      API.sendChat(':us: PWL is running, @' + chatData.from);
+      API.sendChat(':sunny: PWL is running, @' + chatData.from);
     }
   }
 }
@@ -48,9 +48,9 @@ pwl.init = function(fullAuto) {
   pwl.stop(true);
   pwl.fullAuto = fullAuto;
   if(fullAuto) {
-    API.sendChat(':us: PWL: Engaged in full auto.');
+    API.sendChat(':sunny: PWL: Engaged in full auto.');
   } else {
-    API.sendChat(':us: PWL: Engaged.');
+    API.sendChat(':sunny: PWL: Engaged.');
   }
   API.on(API.USER_JOIN, pwl.userJoinCallback);
   API.on(API.USER_LEAVE, pwl.userLeaveCallback);
@@ -59,7 +59,7 @@ pwl.init = function(fullAuto) {
 }
 pwl.stop = function(stealth) {
   if(!stealth) {
-    API.sendChat(':us: PWL: Disengaged.');
+    API.sendChat(':sunny: gPWL: Disengaged.');
   }
   API.off(API.USER_JOIN, pwl.userJoinCallback);
   API.off(API.USER_LEAVE, pwl.userLeaveCallback);
